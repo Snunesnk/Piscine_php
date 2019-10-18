@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php
 
-if ($argv[1])
+if ($argc > 1)
 {
 	if (!check_str($argv[1]))
 	{
@@ -11,27 +11,19 @@ if ($argv[1])
 	{
 		$field = 0;
 		$exploded_date = explode(" ", $argv[1]);
-		$total_time = 0;
 		foreach ($exploded_date as $elem)
 		{
 			if ($field == 1)
 			{
-				$total_time += $elem * 24 * 60 * 60;
-				print("elem: ".$elem.", total_time: ".$total_time."\n");
+				$day = $elem;
 			}
 			else if($field == 2)
 			{
-				$nb_month = check_month($elem);
-				$total_time = $nb_month * 30 * 86400 + (($nb_month - 1) / 2) * 86400;
-				if ($nb_month >= 2)
-					$total_time -= 86400;
-				print("elem: ".$elem.", total_time: ".$total_time."\n");
+				$month = check_month($elem) + 1;
 			}
 			else if ($field == 3)
 			{
-				$total_time += ($elem - 1970 - 1) * 31536000;
-				$total_time += (($elem - 1969) / 4) * 86400 - 86400;
-				print("elem: ".$elem.", total_time: ".$total_time."\n");
+				$year = $elem;;
 			}
 			else if ($field == 4)
 			{
@@ -40,17 +32,18 @@ if ($argv[1])
 				foreach ($exploded_time as $time)
 				{
 					if ($field == 0)
-						$total_time += $time * 3600;
+						$hour = $time;
 					else if ($field == 1)
-						$total_time += $time * 60;
+						$minute = $time;
 					else if ($field == 2)
-						$total_time += $time;
+						$second = $time;
 					$field++;
 				}
-				print("elem: ".$elem.", total_time: ".$total_time."\n");
 			}
 			$field++;
 		}
+		print("hour: $hour, minute: $minute, second: $second, month: $month, day: $day, year: $year\n");
+		$total_time = mktime($hour, $minute, $second, $month, $day, $year);
 		print($total_time."\n");
 	}
 }
