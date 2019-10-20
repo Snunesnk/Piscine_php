@@ -1,0 +1,140 @@
+#new_user {
+	flex-basis:bottom;
+}
+
+#error {
+	color:red;
+}
+
+.center {
+	text-align:center;
+}
+
+body {
+	background-image:url(http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cork-wallet.png);
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	color: #444;
+}
+
+.container
+{
+	margin-top:50px;
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:space-around;
+	height:320px;
+}
+
+.image
+{
+	height:200px;
+	width:auto;
+	margin:auto;
+}
+
+.categorie
+{
+	height:250px;
+	width:auto;
+	margin:auto;
+}
+
+.basket
+{
+	width: 250px;
+	flex-direction:column;
+	border:solid black 1px;
+}
+
+.form
+{
+	width:20%;
+	height:10%;
+	display:inline-block;
+}
+
+.header
+{
+	flex-flow:column wrap;
+	background-color:white;
+	display:flex;
+	border:solid grey;
+	margin-bottom:0;
+	align-self:flex-end;
+}
+
+#chapofy {
+	height:120px;
+	text-align:center;
+}
+
+.title {
+	margin-top:40px;
+	font-size:46px;
+	color:#001f3f;
+	background-color:white;
+}
+
+#top
+{
+	display:flex;
+	flex-flow:row wrap;
+	justify-content:space-between;
+}
+
+label {
+    color: #555;
+    display: inline-block;
+}
+
+input {
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 14px;
+    outline: none;
+}
+input[type=text],
+input[type=password] {
+    color: #777;
+    padding-right: 10px;
+    margin: 10px;
+    margin-top: 12px;
+    margin-right: 18px;
+	width:inherit;
+    font-size: 20px;
+}
+
+input[type=submit] {
+	float: left;
+    margin-left: 20px;
+    margin-top: 20px;
+    width: 80px;
+    height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    background-color: black;
+    border-radius: 30px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+#confirm {
+	margin-left:65px;
+	width:120px;
+    background-color: green;
+}
+
+.fig {
+	width:150px;
+	height:320px;
+}
+
+.admin {
+	display:flex;
+	flex-flow:column wrap;
+}
+
+.formadmin
+{
+	display:inline;
+}
